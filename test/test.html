@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div ng-controller="testCtrl">
+	<div>
+		<input type="number" name="testabc" ng-model="testabc" decimals="3" ui-amount min="-20" max="40" formatting="false" >  <span>{{testabc}}</span>
+	</div>
+</div>
+12123
+<script src="../js/angular.js"></script>
+<script src="../src/ui-amount.js"></script>
+<script type="text/javascript">
+	angular.module("app", ['vm2.utils']).controller("testCtrl", ["$scope", function ($scope) {
+		$scope.startup = function () {
+
+		};
+	}]);
+
+	angular.bootstrap(document, ['app']);
+</script>
+</body>
+</html>
