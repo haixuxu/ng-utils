@@ -7,32 +7,28 @@
 <body>
 <div ng-controller="testCtrl">
 	<div>
-		type="text":<input type="text" name="testabc1" ng-model="testabc1" ui-amount>  <span>{{testabc1}}</span>
+		<input type="text" name="testabc" ng-model="testabc" ui-onlynumber mode="12">  <span>{{testabc}}</span>
 		<br/>
 		<br/>
-		type="text":<input type="text" name="testabc2" ng-model="testabc2" ui-amount mode="5.1" decimals="6" formatting="false">  <span>{{testabc2}}</span>
-		<br/>
-		<br/>
-		type="number":<input type="number" id="aaa" name="testabc3" ng-model="testabc3" ui-amount mode="8.2">  <span>{{testabc3}}</span>
-		<br/>
+		<input type="number" name="testabc2" ng-model="testabc2" ui-onlynumber mode="5.2">  <span>{{testabc}}</span>
 	</div>
 	<button type="button" ng-click="test()">test</button>
 </div>
 <script src="../js/angular.js"></script>
 <script src="../src/exports.js"></script>
-<script src="../src/ui-amount.js"></script>
+<script src="../src/vm-onlynumber.js"></script>
 <script type="text/javascript">
 	angular.module("app", ['vm2.utils']).controller("testCtrl", ["$scope", function ($scope) {
 		$scope.startup = function () {
 
 		};
-		$scope.$watch('testabc3', function (newValue) {
+		$scope.$watch('testabc2', function (newValue) {
 			console.log(newValue);
 		});
 
-		$scope.test = function () {
-			console.log($scope);
-		};
+		$scope.test=function () {
+			console.log($scope.testabc2);
+		}
 	}]);
 
 	angular.bootstrap(document, ['app']);

@@ -11,7 +11,7 @@
 (function () {
 	'use strict';
 	/* global angular */
-	angular.module('vm2.utils', []).directive('uiAmount', ['$locale', function ($locale) {
+	angular.module('vm2.utils').directive('uiAmount', ['$locale', function ($locale) {
 
 		return {
 			link: link,
