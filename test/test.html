@@ -7,8 +7,11 @@
 <body>
 <div ng-controller="testCtrl">
 	<div>
-		<input type="number" name="testabc" ng-model="testabc" decimals="3" ui-amount min="-20" max="40" formatting="false" >  <span>{{testabc}}</span>
+		<input type="text" name="testabc1" ng-model="testabc1" ui-amount>  <span>{{testabc}}</span>
+		<br/>
+		<input type="text" name="testabc2" ng-model="testabc2" ui-amount mode="5.1" decimals="6" formatting="false">  <span>{{testabc}}</span>
 	</div>
+	<button type="button" ng-click="test()">test</button>
 </div>
 12123
 <script src="../js/angular.js"></script>
@@ -17,6 +20,13 @@
 	angular.module("app", ['vm2.utils']).controller("testCtrl", ["$scope", function ($scope) {
 		$scope.startup = function () {
 
+		};
+		$scope.$watch('testabc', function (newValue) {
+			console.log(newValue);
+		});
+
+		$scope.test = function () {
+			console.log($scope);
 		};
 	}]);
 
