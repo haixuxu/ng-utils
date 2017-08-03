@@ -1,6 +1,6 @@
 /**
  * ui-amount directive.
- * Version: 0.0.1 by x373241884y
+ * Version: 0.0.2 by x373241884y
  *
  //     Usage:
  //     <input type="text" ui-amount mode="12.2" ></input>
@@ -99,8 +99,9 @@
 				} else if (regex.test(value)) {
 					var index = value.indexOf('.');
 					if (index > 0) {
+						var intString = value.substring(0, index);
 						var dotString = value.substring(index + 1, value.length);
-						if (dotString.length > dotLength) {// Render the last valid input in the field
+						if(intString.length>intLength||dotString.length > dotLength){// Render the last valid input in the field
 							renderLastValidValue();
 						} else {
 							lastValidValue = parseFloat(value, 10);
