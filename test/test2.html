@@ -2,29 +2,50 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Title number</title>
 </head>
 <body>
 <div ng-controller="testCtrl">
 	<div>
-		<input type="text" name="testabc" ng-model="testabc" ui-onlynumber mode="12">  <span>{{testabc}}</span>
+		<div>
+			<pre><code>&lt;input type="text" name="testabc" ng-model="testabc" vm-number mode="12"></code></pre>
+		</div>
+		<br/>
+		<input type="text" name="testabc" ng-model="testabc" vm-number mode="12">  <span>{{testabc}}</span>
 		<br/>
 		<br/>
-		<input type="number" name="testabc2" ng-model="testabc2" ui-onlynumber mode="5.2">  <span>{{testabc}}</span>
+		<div>
+			<pre><code>&lt;input type="tel" name="testabc2" ng-model="testabc2" vm-number mode="8.2"></code></pre>
+		</div>
+		<input type="tel" name="testabc2" ng-model="testabc2" vm-number mode="8.2">  <span>{{testabc2}}</span>
+		<br/>
+		<br/>
 	</div>
 	<button type="button" ng-click="test()">test</button>
+	<br/>
+	<div>
+		<pre>
+			<code id="result"></code>
+		</pre>
+	</div>
 </div>
 <script src="../js/angular.js"></script>
 <script src="../src/exports.js"></script>
-<script src="../src/vm-onlynumber.js"></script>
+<script src="../src/vm-number.js"></script>
 <script type="text/javascript">
 	angular.module("app", ['vm2.utils']).controller("testCtrl", ["$scope", function ($scope) {
 		$scope.startup = function () {
 
 		};
-		$scope.$watch('testabc2', function (newValue) {
-			console.log(newValue);
-		});
+		$scope.$watch(function () {
+			return {
+				'testabc': $scope.testabc,
+				'testabc2': $scope.testabc2
+			};
+		}, function (newObj) {
+			console.log(newObj);
+			document.getElementById("result").innerHTML = JSON.stringify(newObj, null, 4);
+		},true);
 
 		$scope.test=function () {
 			console.log($scope.testabc2);

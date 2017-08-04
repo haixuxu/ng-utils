@@ -2,12 +2,12 @@
  * ui-amount directive.
  * Version: 0.0.1 by x373241884y
  //     Usage:
- //     <input type="text" ui-onlynumber ></input>
+ //     <input type="text" vm-onlynumber ></input>
  //     All Usage(default):
- //     <input type="text" ui-onlynumber max="11">
+ //     <input type="text" vm-onlynumber max="11">
  */
 (function (window, angular) {
-	angular.module('vm2.utils').directive('uiOnlynumber', function () {
+	angular.module('vm2.utils').directive('vmOnlynumber', function () {
 		return {
 			restrict: 'A',
 			require: 'ngModel',

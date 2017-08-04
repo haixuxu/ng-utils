@@ -2,12 +2,12 @@
  * ui-amount directive.
  * Version: 0.0.1 by x373241884y
  //     Usage:
- //     <input type="text" ui-onlynumber ></input>
+ //     <input type="text" vm-number ></input>
  //     All Usage(default):
- //     <input type="text" ui-onlynumber mode="12.2">
+ //     <input type="text" vm-number mode="12.2">
  */
 (function (window, angular) {
-	angular.module('vm2.utils').directive('uiOnlynumber', function () {
+	angular.module('vm2.utils').directive('vmNumber', function () {
 		return {
 			restrict: 'A',
 			require: 'ngModel',
@@ -28,29 +28,8 @@
 				var lastValidValue;                 // Last valid value.
 				ngModelCtrl.$parsers.push(parseViewValue);
 				element.bind('blur', onBlur);        // Event handler for the leave event.
-				if(attrs.type=='number'&&dotLength>0){
-					var count = 0,lastval;
-					element.bind('keydown', function (event) {
-						if(event.keyCode==190){
-							count++;
-							if(count>1){
-								scope.$apply(function () {
-									scope[attrs.ngModel] = undefined;
-								});
-								event.stopPropagation();
-								event.preventDefault();
-								count = 0;
-							}else{
-								lastval = element.val();
-							}
-						}else{
-							lastval = element.val();
-						}
-					});
-				}
 				function parseViewValue(value) {
-					console.log(value);
-					if (angular.isUndefined(value)) {
+					if (angular.isUndefined(value)||value=='') {
 						return value;
 					}
 					value = '' + value;
