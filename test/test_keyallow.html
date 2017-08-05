@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html lang="en" html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Title onlynumber</title>
+</head>
+<body>
+<br/>
+<br/>
+<div>
+	<pre><code>&lt;input type="text" name="testabc" ng-model="testabc" vm-keyallow="number"> </code></pre>
+</div>
+<br/>
+<input type="text" name="testabc" ng-model="testabc" vm-keyallow="/^\-\d+$/">  <span>{{testabc}}</span>
+
+<script src="../js/angular.js"></script>
+<script src="../src/exports.js"></script>
+<script src="../src/vm-keyallow.js"></script>
+<script type="text/javascript">
+	angular.module("app", ['vm2.utils']);
+</script>
+</body>
+</html>

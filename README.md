@@ -1,2 +1,7 @@
 # ng-help
-some directive service filter for play
+angularjs 1.x 常用
+
+
+# 其他
+
+
