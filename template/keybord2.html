@@ -1,0 +1,104 @@
+<div class="numpad-wrapper">
+	<div class="numpad2">
+		<div class="showvalue">
+			<span ng-bind="keybord.viewValue"></span>
+		</div>
+		<div class="keys">
+			<div class="numkeys">
+				<button vm-key="1" class="normal">1</button>
+				<button vm-key="2" class="normal">2</button>
+				<button vm-key="3" class="normal">3</button>
+				<button vm-key="4" class="normal">4</button>
+				<button vm-key="5" class="normal">5</button>
+				<button vm-key="6" class="normal">6</button>
+				<button vm-key="7" class="normal">7</button>
+				<button vm-key="8" class="normal">8</button>
+				<button vm-key="9" class="normal">9</button>
+				<button vm-key="x" class="normal">x</button>
+				<button vm-key="." class="normal">.</button>
+				<button vm-key="0" class="normal">0</button>
+			</div>
+			<div class="fnkeys">
+				<button vm-key="[DELETE]" class="small">删除</button>
+				<button vm-key="[OK]" class="small">完成</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+	.numpad-wrapper {
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+		background: rgba(0,0,0,0.5);
+	}
+	.numpad2 {
+		position: fixed;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 14rem;
+		z-index: 10;
+		background: #F2F2F2;
+	}
+	.numpad2 .showvalue {
+		height: 2rem;
+		line-height: 2rem;
+		text-align: center;
+		background-color: lightyellow;
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+	.numpad2 .keys {
+		width: 100%;
+		height: 12rem;
+	}
+	.numpad2 .keys:after {
+		clear: both;
+	}
+	.numpad2 .numkeys {
+		display: block;
+		float: left;
+		width: 75%;
+	}
+	.numpad2 .fnkeys {
+		display: block;
+		float: right;
+		width: 25%;
+		height: 6rem;
+		line-height: 6rem;
+		border: none;
+		font-size: 20px;
+		color: #3C9ED5;
+		background: none;
+	}
+	.numpad2 .keys button{
+		display: block;
+		float: left;
+		border: 1px solid #F2F2F2;
+		font-size: 28px;
+		color: #4D4D4D;
+		background-color: #FBFBFD;
+	}
+	.numpad2 .numkeys button{
+		line-height: 3rem;
+		height: 3rem;
+		width: 33.33%;
+	}
+	.numpad2 .fnkeys button{
+		line-height: 6rem;
+		height: 6rem;
+		width: 100%;
+	}
+	.numpad2 .keys button.pressed {
+		background-color: lightgrey;
+		opacity: 0.3;
+	}
+</style>
