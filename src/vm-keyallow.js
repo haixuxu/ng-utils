@@ -16,7 +16,7 @@
  */
 (function (window, angular) {
 	angular.module('vm2.utils').directive('vmKeyallow', function () {
-
+		var REGEX_STRING_REGEXP = /^\/(.+)\/([a-z]*)$/;
 		var defaultMasks = {
 			"number": /^\d*$/,
 			"word": /^[0-9a-zA-Z]*$/,
@@ -36,6 +36,9 @@
 				} else {
 					console.log(keyword);
 					rule = keyword;
+					if(REGEX_STRING_REGEXP.test(keyword)){
+						rule = new RegExp(RegExp.$1, RegExp.$2);
+					}
 				}
 				modelCtrl.$parsers.push(function (inputValue) {
 					if (inputValue == undefined) return '';
