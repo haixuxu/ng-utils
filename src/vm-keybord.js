@@ -42,7 +42,7 @@ angular.module('vm2.utils').directive({
 		return {
 			restrict: 'A',
 			templateUrl: function (element, attrs) {
-				return attrs.templateUrl || '/template/keybord1.html';
+				return attrs.templateUrl || 'template/keybord1.html';
 			},
 			scope: true,
 			link: function (scope, element, attrs) {
