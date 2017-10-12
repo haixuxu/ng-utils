@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html  v-app="ibsapp">
+<html  ng-app="app">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>keybord template</title>
+	<link rel="stylesheet" href="css/keybord.css">
 </head>
-<body v-controller="AppCtrl" v-init="startup()">
-<input type="text" name="nnanann" v-model="fdafaf" />
+<body ng-init="testabc=1.5">
+<br/>
+<br/>
+<br/>example1:
+<input type="text" name="testabc" style="width: 200px;height: 36px;" ng-model="testabc" vm-keybord-input mode="6.2">  <span>{{testabc}}</span>
+<br/>
+<br/>example2:
+<input type="text" name="testabc2" style="width: 200px;height: 36px;" ng-model="testabc2" vm-keybord-input mode="8.2" template-url="/template/keybord2.html">  <span>{{testabc2}}</span>
+
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="./js/angular.js"></script>
+<script src="./js/vm2-utils.js"></script>
+<script type="text/javascript">
+	angular.module("app", ['vm2.utils']);
+</script>
 </body>
 </html>

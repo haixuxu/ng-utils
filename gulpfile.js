@@ -16,6 +16,7 @@ gulp.task('clean', function () { //clean dist directory
 gulp.task('default', ['clean'], function () { //
 	return gulp.src(config.resources, {cwd: 'src'})
 		.pipe(plugins.concat(config.output.cat))
+		.pipe(plugins.beautify({indent_size: 4}))
 		.pipe(gulp.dest('./dist'))
 		.pipe(plugins.jshint())
 		.pipe(plugins.uglify())
