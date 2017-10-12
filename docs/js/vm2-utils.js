@@ -1,5 +1,8 @@
 /**
- * Created by x373241884y
+ * ng-utils
+ * version: v0.0.1
+ * repo: https://github.com/x373241884y/ng-utils
+ * build: 2017-10-12 17:50:46
  */
 (function(angular, window, undefined) {
 	angular.module("vm2.utils", []);
@@ -258,21 +261,21 @@
 			}
 		}
 	});
-    /*
-     * Class style:
-     * <input type="text" vm-keyfilter="/\d+/" />
-     *
-     * Available classes:
-     * mask-pint:     /[\d]/
-     * mask-int:      /[\d\-]/
-     * mask-pnum:     /[\d\.]/
-     * mask-money     /[\d\.\s,]/
-     * mask-num:      /[\d\-\.]/
-     * mask-hex:      /[0-9a-f]/i
-     * mask-email:    /[a-z0-9_\.\-@]/i
-     * mask-alpha:    /[a-z_]/i
-     * mask-alphanum: /[a-z0-9_]/i
-     */
+	/*
+	 * Class style:
+	 * <input type="text" vm-keyfilter="/\d+/" />
+	 *
+	 * Available classes:
+	 * mask-pint:     /[\d]/
+	 * mask-int:      /[\d\-]/
+	 * mask-pnum:     /[\d\.]/
+	 * mask-money     /[\d\.\s,]/
+	 * mask-num:      /[\d\-\.]/
+	 * mask-hex:      /[0-9a-f]/i
+	 * mask-email:    /[a-z0-9_\.\-@]/i
+	 * mask-alpha:    /[a-z_]/i
+	 * mask-alphanum: /[a-z0-9_]/i
+	 */
 
 	// $browser fallback for jQuery 1.9+.
 	var $browser = (function() {
