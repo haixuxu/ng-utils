@@ -69,9 +69,16 @@ angular.module('vm2.utils').directive('vmAmount', ['$locale', function ($locale)
 		}
 
 		function formatViewValue(value) {
+			if(!ngModelCtrl.$isEmpty(value)){
+				lastValidValue=ngModelCtrl.$modelValue = value;
+				return formatPrecision(toString(value));
+			}else{
+				return '';
+			}
+		}
+		function toString(value) {
 			return ngModelCtrl.$isEmpty(value) ? '' : '' + value;
 		}
-
 		/**
 		 * Parse the view value.
 		 */
@@ -114,7 +121,7 @@ angular.module('vm2.utils').directive('vmAmount', ['$locale', function ($locale)
 		}
 
 		function renderLastValidValue() {
-			ngModelCtrl.$setViewValue(formatViewValue(lastValidValue));
+			ngModelCtrl.$setViewValue(toString(lastValidValue));
 			ngModelCtrl.$render();
 		}
 		/**
@@ -135,7 +142,7 @@ angular.module('vm2.utils').directive('vmAmount', ['$locale', function ($locale)
 		function onFocus() {
 			var value = ngModelCtrl.$modelValue;
 			if (!angular.isUndefined(value)) {
-				ngModelCtrl.$viewValue = ("" + value).replace(".", decimalSeparator);
+				ngModelCtrl.$viewValue = ''+value;
 				ngModelCtrl.$render();
 			}
 		}
