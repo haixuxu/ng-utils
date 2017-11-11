@@ -1,1 +1,2 @@
 (function (angular, window, undefined) {
+    angular.module("vm2.utils", []);

@@ -1,0 +1,16 @@
+<div ng-controller="testbbbbCtrl">
+    <div ng-init="testabc=1.25">
+        <br/>example1:
+        <input type="text" name="testabc" style="width: 200px;height: 36px;" ng-model="testabc" vm-keybord-input mode="6.2">  <span>{{testabc}}</span>
+        <br/>
+        <br/>example2:
+        <input type="text" name="testabc2" style="width: 200px;height: 36px;" ng-model="testabc2" vm-keybord-input mode="8.2" template-url="template/keybord2.html">  <span>{{testabc2}}</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+    testbbbbCtrl.$inject = ['$scope'];
+    function testbbbbCtrl($scope) {
+        console.log($scope);
+    }
+</script>

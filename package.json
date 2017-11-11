@@ -3,17 +3,29 @@
   "version": "v0.0.1",
   "main": "dist/vm2-utils.min.js",
   "author": "x373241884y <x373241884y@gmail.com>",
+  "scripts": {
+    "dev": "gulp dev",
+    "doc": "gulp doc",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x373241884y/ng-utils.git"
+  },
   "devDependencies": {
     "del": "^1.1.1",
     "event-stream": "^3.2.2",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-beautify": "^2.0.1",
     "gulp-concat": "^2.4.3",
     "gulp-header": "^1.8.9",
     "gulp-jshint": "^1.9.2",
+    "gulp-less": "^3.3.2",
     "gulp-load-plugins": "^1.5.0",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.1.0",
-    "moment": "^2.19.1"
+    "moment": "^2.19.1",
+    "ncp": "^2.0.0"
   }
 }

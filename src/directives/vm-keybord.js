@@ -174,24 +174,23 @@ angular.module('vm2.utils').directive({
 				 */
 				function keyPressOut(event) {
 					//计算移动端touchmove时移动的距离，用于模拟取消输入手势
-					// if (isTouch) {
-					// 	var orginE = event.originalEvent;
-					// 	var touch = orginE.touches[0];
-					// 	this.endPosition = {
-					// 		x: touch.pageX,
-					// 		y: touch.pageY
-					// 	};
-					// 	var deltaY = this.endPosition.y - this.startPosition.y;
-					// 	var moveLength = Math.abs(deltaY);
-					// 	if (moveLength > moveYLength) { //如果Y轴移动距离大于moveYLength，判定为取消输入
-					// 		$(this).removeClass('pressed');
-					// 	} else { //否则，作为正常数字键按下响应
-					// 		keyPressEnd.apply(this);
-					// 	}
-					// } else {
-					// 	$(this).removeClass('pressed');
-					// }
-					$(this).removeClass('pressed');
+					if (isTouch) {
+						var orginE = event.originalEvent;
+						var touch = orginE.touches[0];
+						this.endPosition = {
+							x: touch.pageX,
+							y: touch.pageY
+						};
+						var deltaY = this.endPosition.y - this.startPosition.y;
+						var moveLength = Math.abs(deltaY);
+						if (moveLength > moveYLength) { //如果Y轴移动距离大于moveYLength，判定为取消输入
+							$(this).removeClass('pressed');
+						} else { //否则，作为正常数字键按下响应
+							keyPressEnd.apply(this);
+						}
+					} else {
+						$(this).removeClass('pressed');
+					}
 				}
 			}
 		}

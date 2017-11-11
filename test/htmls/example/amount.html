@@ -1,0 +1,17 @@
+<div ng-controller="testbbbbCtrl">
+    <div>
+        type="text":<input type="text" name="testabc1" ng-model="testabc1" vm-amount>  <span>{{testabc1}}</span>
+        <br/>
+        <br/>
+        type="text":<input type="text" name="testabc2" ng-model="testabc2" vm-amount mode="8.2" decimals="2" formatting="false">  <span>{{testabc2}}</span>
+        <br/>
+        <br/>
+    </div>
+</div>
+
+<script type="text/javascript">
+    testbbbbCtrl.$inject = ['$scope'];
+    function testbbbbCtrl($scope) {
+        console.log($scope);
+    }
+</script>
