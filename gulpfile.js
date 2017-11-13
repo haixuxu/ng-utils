@@ -37,7 +37,7 @@ gulp.task('watch', function () {
 
 gulp.task('dev', ['less', 'concat', 'watch']);
 gulp.task('doc', ['less', 'concat'],function (done) {
-    ncp('test/', 'doc/', function (err) {
+    ncp('test/', 'docs/', function (err) {
         if (err) {
             return console.error(err);
         }
